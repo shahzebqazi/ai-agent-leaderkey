@@ -1,6 +1,6 @@
 # Leader Key · Cursor harness (macOS)
 
-[![CI](https://github.com/shahzebqazi/leaderkey/actions/workflows/ci.yml/badge.svg)](https://github.com/shahzebqazi/leaderkey/actions/workflows/ci.yml)
+[![CI](https://github.com/shahzebqazi/ai-agent-leaderkey/actions/workflows/ci.yml/badge.svg)](https://github.com/shahzebqazi/ai-agent-leaderkey/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 ## Executive summary
@@ -30,7 +30,7 @@
 
 ## GitHub Pages
 
-Static showcase: **[docs/index.html](docs/index.html)** — enable **Pages** → **Deploy from a branch** → **`/docs`** on `main` if you want `https://<user>.github.io/leaderkey/`.
+Static showcase: **[docs/index.html](docs/index.html)** — enable **Pages** → **Deploy from a branch** → **`/docs`** on `main` if you want `https://shahzebqazi.github.io/ai-agent-leaderkey/`.
 
 ## Development
 
