@@ -24,6 +24,10 @@ Leader Key needs **Accessibility** (and often **Input Monitoring**) in **System 
 - **Scripts**: `python3 scripts/leaderkey_backup.py --dest backups` (macOS).
 - **Share/backup**: store JSON in git or encrypted backup; strip sensitive paths for public repos.
 
+## Config edits in Cursor (this harness)
+
+When the user asks you to **change their map**, edit the **live** `config.json` under Application Support first, reload Leader Key, and confirm it works. **Only then** mirror a **sanitized** version into `config/templates/recommended-root.template.json` (if they want it public), run tests, commit, and push to GitHub—see `docs/user-guide.md` and `docs/milestone-review.md`.
+
 ## Debugging order
 
 1. Confirm the **leader key** is not stolen by another app (Karabiner, BetterTouchTool, etc.).

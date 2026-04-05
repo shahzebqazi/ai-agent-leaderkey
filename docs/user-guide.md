@@ -65,6 +65,8 @@ See [hotkey-conflicts.md](hotkey-conflicts.md) before assigning keys that mirror
 
 Open this repository in **Cursor 3+** so `.cursor/rules/` apply. Use the **Agent Window** for multi-step edits.
 
+**Typical agent workflow:** Ask the agent to change your **local** `config.json` (reveal with `open "leaderkey://config-reveal"`), reload Leader Key, and try the new bindings. When you are happy with behavior, have the agent (or you) mirror a **sanitized** subset into `config/templates/recommended-root.template.json` if you want it on GitHub, run `python3 -m unittest discover -s tests -v`, then commit and push. Never publish machine-specific paths or secrets in the template.
+
 ## Further reading
 
 - [Hotkey conflicts](hotkey-conflicts.md)
