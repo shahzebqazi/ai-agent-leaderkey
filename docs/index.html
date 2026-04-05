@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Leader Key · Cursor harness</title>
+    <style>
+      :root {
+        --bg: #0c0e12;
+        --card: rgba(255, 255, 255, 0.06);
+        --border: rgba(255, 255, 255, 0.12);
+        --text: rgba(255, 255, 255, 0.92);
+        --muted: rgba(255, 255, 255, 0.62);
+        --accent: #7eb8ff;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+          Helvetica, Arial, sans-serif;
+        color: var(--text);
+        background: radial-gradient(
+            1200px 800px at 20% -10%,
+            rgba(100, 160, 255, 0.18),
+            transparent 55%
+          ),
+          radial-gradient(
+            900px 600px at 90% 20%,
+            rgba(180, 120, 255, 0.12),
+            transparent 50%
+          ),
+          var(--bg);
+      }
+      .wrap {
+        max-width: 44rem;
+        margin: 0 auto;
+        padding: 3rem 1.5rem 4rem;
+      }
+      .hero {
+        font-size: clamp(1.75rem, 4vw, 2.25rem);
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        line-height: 1.2;
+        margin: 0 0 0.75rem;
+      }
+      .sub {
+        color: var(--muted);
+        font-size: 1.05rem;
+        line-height: 1.55;
+        margin: 0 0 2rem;
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 1.25rem 1.35rem;
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+      }
+      .card h2 {
+        margin: 0 0 0.75rem;
+        font-size: 0.85rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--muted);
+      }
+      ul {
+        margin: 0;
+        padding-left: 1.15rem;
+      }
+      li {
+        margin: 0.4rem 0;
+      }
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem 1.25rem;
+        margin-top: 1rem;
+      }
+      footer {
+        margin-top: 2.5rem;
+        font-size: 0.85rem;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <p class="hero">Where powerful feels simple.</p>
+      <p class="sub">
+        A Cursor harness for
+        <a href="https://github.com/mikker/LeaderKey">Leader Key</a> on macOS:
+        validated JSON, hotkey notes, and agent-friendly rules.
+      </p>
+      <div class="card">
+        <h2>Executive summary</h2>
+        <ul>
+          <li>
+            Ship a <strong>tested</strong> root config template and the
+            <strong>upstream default</strong> example side by side.
+          </li>
+          <li>
+            Document <strong>macOS shortcut overlap</strong> before you bind
+            leader chords that replay system keys.
+          </li>
+          <li>
+            Use Cursor <strong>Glass</strong>-style docs: short, scannable, no
+            internal reasoning in user-facing pages.
+          </li>
+        </ul>
+        <div class="links">
+          <a
+            href="https://github.com/shahzebqazi/leaderkey/blob/main/docs/user-guide.md"
+            >User guide</a
+          >
+          <a
+            href="https://github.com/shahzebqazi/leaderkey/blob/main/docs/hotkey-conflicts.md"
+            >Hotkey conflicts</a
+          >
+          <a href="https://github.com/shahzebqazi/leaderkey">Repository</a>
+        </div>
+      </div>
+      <footer>
+        MIT License ·
+        <a href="https://github.com/shahzebqazi/leaderkey">shahzebqazi/leaderkey</a>
+      </footer>
+    </div>
+  </body>
+</html>

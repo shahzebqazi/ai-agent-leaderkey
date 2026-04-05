@@ -1,0 +1,89 @@
+{
+  "type": "group",
+  "actions": [
+    {
+      "key": "t",
+      "label": "Terminal (dotfiles folder)",
+      "type": "command",
+      "value": "open -na Ghostty.app --args --working-directory=\"$HOME/Developer/dotfiles\""
+    },
+    {
+      "key": "b",
+      "label": "Firefox (named profile)",
+      "type": "command",
+      "value": "open -na \"/Applications/Firefox.app\" --args -P default-release"
+    },
+    {
+      "key": "f",
+      "label": "Finder",
+      "type": "application",
+      "value": "/System/Library/CoreServices/Finder.app"
+    },
+    {
+      "key": "c",
+      "label": "Google Chrome",
+      "type": "application",
+      "value": "/Applications/Google Chrome.app"
+    },
+    {
+      "key": "o",
+      "label": "Obsidian",
+      "type": "application",
+      "value": "/Applications/Obsidian.app"
+    },
+    {
+      "key": "w",
+      "label": "Next window (⌘`)",
+      "type": "command",
+      "value": "osascript -e 'tell application \"System Events\" to keystroke \"`\" using command down'"
+    },
+    {
+      "key": "8",
+      "label": "Emoji & symbols (⌃⌘Space)",
+      "type": "command",
+      "value": "osascript -e 'tell application \"System Events\" to keystroke space using {control down, command down}'"
+    },
+    {
+      "key": "a",
+      "label": "Music (replace with your DAW or main audio app)",
+      "type": "application",
+      "value": "/System/Applications/Music.app"
+    },
+    {
+      "key": "d",
+      "label": "Toggle Dock (⌘⌥D)",
+      "type": "command",
+      "value": "osascript -e 'tell application \"System Events\" to keystroke \"d\" using {command down, option down}'"
+    },
+    {
+      "key": "g",
+      "label": "Projects folder",
+      "type": "folder",
+      "value": "~/Developer"
+    },
+    {
+      "key": "r",
+      "label": "REAPER (edit path)",
+      "type": "application",
+      "value": "/Applications/REAPER.app"
+    },
+    {
+      "key": "s",
+      "label": "Neovim in terminal",
+      "type": "command",
+      "value": "open -na Ghostty.app --args -e nvim"
+    },
+    {
+      "key": "m",
+      "label": "Mute / unmute output",
+      "type": "command",
+      "value": "osascript -e 'set volume output muted not (output muted of (get volume settings))'"
+    },
+    {
+      "key": "x",
+      "label": "Reload Leader Key",
+      "type": "url",
+      "value": "leaderkey://config-reload"
+    }
+  ]
+}

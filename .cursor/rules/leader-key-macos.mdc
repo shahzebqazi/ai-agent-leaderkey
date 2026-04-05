@@ -37,3 +37,10 @@ Configs are **JSON** with **actions** and **groups** (nested shortcuts). Prefer 
 ## Scope
 
 You are **not** implementing app features unless the user’s repo contains Leader Key source. For this harness repo, focus on **configuration, operations, and troubleshooting** on the user’s Mac.
+
+## Repository map
+
+- **`docs/user-guide.md`** — install paths, template usage, backups.
+- **`docs/hotkey-conflicts.md`** — macOS shortcuts that overlap with common patterns.
+- **`examples/`** — upstream default JSON; **`config/templates/`** — sanitized recommended root.
+- **`tests/`** — JSON validation; run before claiming configs are valid.
