@@ -44,6 +44,12 @@ We assume the reader already uses a leader trigger (the author uses **Option (�
 
 Research on **StarCraft II** reports that **custom hotkey shortcuts** are associated with **better performance**, and that **perceived usability problems** correlate with **worse** performance—supporting the importance of **consistent, learnable** maps (see [Human Factors and Ergonomics Society proceedings entry](https://journals.sagepub.com/doi/10.1177/1541931213601283); full bibliographic details should be pulled from the publisher page for your final citation list).
 
+### 2.4 Leader Key vs macOS Shortcuts
+
+**Shortcuts** is Apple’s **flow-based** automation: visual editor, **many trigger types** (time, Focus, Siri, widgets), and deep **system** actions. **Leader Key** is **keyboard-native routing**: a **leader chord** opens a **user-defined tree** of actions (`application`, `url`, `command`, `folder`, nested **groups**).
+
+They **overlap in outcomes** (open an app, run a script) but **not in modality**. Shortcuts excels at **“when X, do Y.”** Leader Key excels at **deterministic, mnemonic sequences** without **fuzzy search**, with **git-friendly** JSON. A **command** action can invoke **`shortcuts run "Name"`**, so the two can be **composed**: Leader Key as the **keyboard surface**, Shortcuts as the **automation engine** where appropriate.
+
 ---
 
 ## 3. Thesis
@@ -63,22 +69,24 @@ Research on **StarCraft II** reports that **custom hotkey shortcuts** are associ
 
 The following table ties **common application classes** to **single-character** inner keys. It aligns with the author’s practice (**leader + `b`** → browser) and with **Omarchy-style** mnemonics (browser, files, editor, terminal) where applicable. **Readers should adapt** letters to their language, keyboard layout, and health needs.
 
-| Key | Suggested role | Mnemonic / note |
-|-----|----------------|-----------------|
-| **b** | Browser | **B**rowser; matches the author’s binding and many Linux cheat sheets for browser. |
-| **t** | Terminal | **T**erminal. |
-| **f** | Finder / files | **F**iles. |
-| **e** | Code editor / IDE | **E**dit (if distinct from notes). |
-| **o** | Obsidian / notes | **O**utline / notes vault. |
-| **c** | Secondary browser or “Chrome” | **C**hrome; omit if redundant with **b**. |
-| **m** | Messages, Mail, or mute | **M**essage / **m**ute—pick **one** primary meaning. |
-| **s** | Shell editor (e.g. Neovim) | **S**ession in terminal. |
-| **r** | DAW / REAPER / “run” | **R**ecord / **R**EAPER. |
-| **g** | Projects folder / git | **G**it / **g**o to project. |
-| **d** | Dock toggle / display | **D**ock; if the action **synthesizes** ⌘⌥D, see conflict notes. |
-| **w** | Window operations | **W**indow. |
-| **x** | Meta (reload config, etc.) | **E**x**x**tra / e**x**change / reload—keep consistent. |
-| **8** | Emoji / symbols | Non-letter; may replay ⌃⌘Space (document conflicts). |
+
+| Key   | Suggested role                | Mnemonic / note                                                                    |
+| ----- | ----------------------------- | ---------------------------------------------------------------------------------- |
+| **b** | Browser                       | **B**rowser; matches the author’s binding and many Linux cheat sheets for browser. |
+| **t** | Terminal                      | **T**erminal.                                                                      |
+| **f** | Finder / files                | **F**iles.                                                                         |
+| **e** | Code editor / IDE             | **E**dit (if distinct from notes).                                                 |
+| **o** | Obsidian / notes              | **O**utline / notes vault.                                                         |
+| **c** | Secondary browser or “Chrome” | **C**hrome; omit if redundant with **b**.                                          |
+| **m** | Messages, Mail, or mute       | **M**essage / **m**ute—pick **one** primary meaning.                               |
+| **s** | Shell editor (e.g. Neovim)    | **S**ession in terminal.                                                           |
+| **r** | DAW / REAPER / “run”          | **R**ecord / **R**EAPER.                                                           |
+| **g** | Projects folder / git         | **G**it / **g**o to project.                                                       |
+| **d** | Dock toggle / display         | **D**ock; if the action **synthesizes** ⌘⌥D, see conflict notes.                   |
+| **w** | Window operations             | **W**indow.                                                                        |
+| **x** | Meta (reload config, etc.)    | **E**x**x**tra / e**x**change / reload—keep consistent.                            |
+| **8** | Emoji / symbols               | Non-letter; may replay ⌃⌘Space (document conflicts).                               |
+
 
 **Creativity:** The **leader** chord itself is a design choice (⌥+`.`, F12, Caps-as-Hyper, etc.). **Thumb** or **home-row** modifiers (including hardware or Karabiner remaps) can reduce **pinky** load. **Ambidextrous** or **alternate-hand** leaders deserve experimentation—especially for users with **RSI** history.
 
@@ -86,9 +94,13 @@ The following table ties **common application classes** to **single-character** 
 
 ## 5. Ergonomics and peer-reviewed context
 
-Digital gaming is associated with **measurable** upper-limb fatigue and **genre-specific** movement patterns. Recent work reports **wrist extensor fatigue** over extended sessions and limited recovery after short breaks ([BMC Sports Science, Medicine and Rehabilitation](https://link.springer.com/article/10.1186/s13102-025-01305-0), DOI [10.1186/s13102-025-01305-0](https://doi.org/10.1186/s13102-025-01305-0)). Other research differentiates **upper-limb kinematics** by **game genre** ([*Scientific Reports*](https://www.nature.com/articles/s41598-025-90949-6), DOI [10.1038/s41598-025-90949-6](https://doi.org/10.1038/s41598-025-90949-6)), suggesting that **not all** “gaming” movement patterns suit **low-repetition** launcher use—but that **posture**, **breaks**, and **awareness of cumulative load** remain relevant.
+Digital gaming is associated with **measurable** upper-limb fatigue and **genre-specific** movement patterns. Recent work reports **wrist extensor fatigue** over extended sessions and limited recovery after short breaks ([BMC Sports Science, Medicine and Rehabilitation](https://link.springer.com/article/10.1186/s13102-025-01305-0), DOI [10.1186/s13102-025-01305-0](https://doi.org/10.1186/s13102-025-01305-0)). Other research differentiates **upper-limb kinematics** by **game genre** (*[Scientific Reports](https://www.nature.com/articles/s41598-025-90949-6)*, DOI [10.1038/s41598-025-90949-6](https://doi.org/10.1038/s41598-025-90949-6)), suggesting that **not all** “gaming” movement patterns suit **low-repetition** launcher use—but that **posture**, **breaks**, and **awareness of cumulative load** remain relevant.
 
 **Practical takeaway for leader-key users:** treat launcher shortcuts as **low repetition** compared to FPS spam, but still **vary posture**, **take breaks**, and **avoid** bindings that force **sustained ulnar deviation** or **stretch** on every invocation.
+
+### 5.1 Alternate layouts, keypads, and accessibility
+
+**Keyboard layouts** (e.g. QWERTY vs Dvorak vs Colemak) change **physical** positions but Leader Key binds **logical** keys as received by the app; users on **non-QWERTY** layouts should **re-validate** bindings after OS or layout changes. **External keypads and macro pads** can host a **dedicated leader** key or **duplicate** leaders to **alternate hands**, reducing **pinky** load and **reach**—relevant for **RSI** prevention and **one-handed** use. **Assistive technologies** (Sticky Keys, slow keys) and **remapping tools** (Karabiner-Elements) interact with **global** chords; **test** the full **leader → action** path after any change.
 
 ---
 
@@ -103,19 +115,27 @@ Digital gaming is associated with **measurable** upper-limb fatigue and **genre-
 
 ## 7. Conclusion
 
-Framing **Leader Key** as a **bridge** between **Linux-style mnemonic Super-chords** and **RTS-style layered commands** gives designers a **shared vocabulary** for documentation and teaching. Pairing that with **HCI** work on **custom shortcuts** and **peer-reviewed** **ergonomics** literature grounds the habit in **evidence** without overstating certainty. **Leader + `b`** for browser is one **stable**, **memorable** point in a map that **you** should own, revise, and protect with **backups** and **conflict checks**.
+Framing **Leader Key** as a **bridge** between **Linux-style mnemonic Super-chords** and **RTS-style layered commands** gives designers a **shared vocabulary** for documentation and teaching. Pairing that with **HCI** work on **custom shortcuts** and **peer-reviewed** **ergonomics** literature grounds the habit in **evidence** without overstating certainty. **Leader + `b`** for browser is one **stable**, **memorable** point in a map that **you** should own, revise, and protect with **backups** and **conflict checks**. Treat **Shortcuts** as a **complementary** system for **triggers and long flows**, not a drop-in substitute for a **leader layer**.
+
+---
+
+## 8. Scope and future research directions
+
+**First-party scope (this harness):** emphasize **app launching** for early releases; document **backup**, **conflicts**, and **Cursor**-assisted onboarding. **Contributions** may extend the same JSON toward **URLs**, **folders**, **shell commands**, **`leaderkey://` hooks**, and **nested groups** for **utilities** (settings, rare apps) without requiring **multiple profiles**—one canonical config per user remains the **default assumption**; **named profiles** remain **optional future** work for multi-context or teaching scenarios.
+
+**Research prompts:** empirical studies could compare **leader-only** app launch latency and **error rate** vs **Spotlight** for **fixed** targets; **longitudinal** studies could track **layout** changes and **RSI** reports among **alternate-layout** users.
 
 ---
 
 ## References
 
-1. **BMC Sports Science, Medicine and Rehabilitation** — Wrist extensor fatigue and related outcomes in esports (2025). DOI: [10.1186/s13102-025-01305-0](https://doi.org/10.1186/s13102-025-01305-0).  
-2. ***Scientific Reports*** — Genre-specific upper-limb kinematics in esports (2025). DOI: [10.1038/s41598-025-90949-6](https://doi.org/10.1038/s41598-025-90949-6).  
-3. **Proceedings of the Human Factors and Ergonomics Society Annual Meeting** — StarCraft II usability, ergonomics, and performance (custom hotkeys and usability). DOI: [10.1177/1541931213601283](https://doi.org/10.1177/1541931213601283).  
-4. **Leader Key** (software). [https://github.com/mikker/LeaderKey](https://github.com/mikker/LeaderKey).  
-5. **Omarchy** documentation and community cheat sheets (e.g. [Omarchy cheat sheet](https://acrogenesis.github.io/omarchy-cheat-sheet/), [The Omarchy Manual](https://learn.omacom.io/2/the-omarchy-manual)).  
-6. This repository: [hotkey-conflicts.md](hotkey-conflicts.md), [user-guide.md](user-guide.md).
+1. **BMC Sports Science, Medicine and Rehabilitation** — Wrist extensor fatigue and related outcomes in esports (2025). DOI: [10.1186/s13102-025-01305-0](https://doi.org/10.1186/s13102-025-01305-0).
+2. ***Scientific Reports*** — Genre-specific upper-limb kinematics in esports (2025). DOI: [10.1038/s41598-025-90949-6](https://doi.org/10.1038/s41598-025-90949-6).
+3. **Proceedings of the Human Factors and Ergonomics Society Annual Meeting** — StarCraft II usability, ergonomics, and performance (custom hotkeys and usability). DOI: [10.1177/1541931213601283](https://doi.org/10.1177/1541931213601283).
+4. **Leader Key** (software). [https://github.com/mikker/LeaderKey](https://github.com/mikker/LeaderKey).
+5. **Omarchy** documentation and community cheat sheets (e.g. [Omarchy cheat sheet](https://acrogenesis.github.io/omarchy-cheat-sheet/), [The Omarchy Manual](https://learn.omacom.io/2/the-omarchy-manual)).
+6. This repository: [hotkey-conflicts.md](hotkey-conflicts.md), [user-guide.md](user-guide.md), [ux-research.md](ux-research.md).
 
 ---
 
-*Draft for review. Ask the maintainer to push to GitHub after you approve the text.*
+*Draft — see repository history for review.*
