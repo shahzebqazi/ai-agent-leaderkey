@@ -1,5 +1,7 @@
 # UX research
 
+**Position paper (draft):** [paper-leader-key-hotkeys.md](paper-leader-key-hotkeys.md) — thesis on leader-key design, Omarchy and RTS analogies, ergonomics citations, and a mnemonic letter map. Review before it is pushed to the remote.
+
 Use this document for **your** observations and study notes. The maintainers do not pre-fill conclusions here.
 
 ## How to use this file

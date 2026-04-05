@@ -18,6 +18,7 @@
 | [User guide](docs/user-guide.md) | Install, config paths, template workflow, backups |
 | [Hotkey conflicts](docs/hotkey-conflicts.md) | macOS shortcuts that overlap with template patterns |
 | [UX research outline](docs/ux-research.md) | Prompts for your own notes |
+| [Paper (draft): Leader Key hotkeys](docs/paper-leader-key-hotkeys.md) | Position paper: Omarchy, RTS, ergonomics, mnemonic map |
 | [Scripts (roadmap)](scripts/README.md) | Reserved for future automation |
 
 ## Examples
