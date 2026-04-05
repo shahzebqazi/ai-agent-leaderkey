@@ -23,6 +23,7 @@
 | [UX research](docs/ux-research.md) | Scope, Shortcuts comparison, future uses |
 | [Paper (draft)](docs/paper-leader-key-hotkeys.md) | Omarchy, RTS, ergonomics, mnemonic map |
 | [Scripts](scripts/README.md) | Backup, restore, `leaderkey_open` |
+| [Milestone review](docs/milestone-review.md) | Before a release: review live config, sanitize template, push |
 
 ## Examples
 
