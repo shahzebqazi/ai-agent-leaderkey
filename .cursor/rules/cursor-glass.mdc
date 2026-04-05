@@ -1,0 +1,19 @@
+---
+description: Align repo docs and agent answers with Cursor Glass — clear hierarchy and user control
+alwaysApply: true
+---
+
+# Cursor Glass alignment
+
+[Cursor Glass](https://cursor.com/glass) emphasizes **clarity**, **intuitive structure**, and **user control** when working with agents.
+
+## For this repository
+
+- **README and docs** lead with **outcomes**, then link to detail. Keep an **executive summary** at the top of the README.
+- **No chain-of-thought** in user-facing markdown: write for a human reader.
+- Prefer **short sections** and **scannable headings** in `docs/` and the GitHub Pages showcase.
+- Use the **Agent Window** (Cursor 3+) for multi-step tasks; break work into reviewable slices when changes are risky.
+
+## GitHub Pages
+
+Keep `docs/index.html` lightweight: purpose, links to guides, examples—no internal planning artifacts.
