@@ -12,6 +12,14 @@
         --text: rgba(255, 255, 255, 0.92);
         --muted: rgba(255, 255, 255, 0.62);
         --accent: #7eb8ff;
+        /* WoW bag–inspired (original styling, not game assets) */
+        --leather-dark: #2a1f18;
+        --leather-mid: #4a3528;
+        --leather-light: #6b4e3d;
+        --gold: #c9a227;
+        --gold-bright: #e8d48b;
+        --slot-bg: rgba(0, 0, 0, 0.45);
+        --slot-edge: rgba(139, 115, 85, 0.55);
       }
       * {
         box-sizing: border-box;
@@ -93,9 +101,189 @@
         font-size: 0.85rem;
         color: var(--muted);
       }
+
+      /* —— Bag overlay (WoW-style inspired HUD) —— */
+      .bag-backdrop {
+        position: fixed;
+        inset: 0;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        background: rgba(0, 0, 0, 0.55);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.2s ease, visibility 0.2s ease;
+      }
+      .bag-backdrop.is-open {
+        opacity: 1;
+        visibility: visible;
+      }
+      .bag-backdrop.is-open .bag-panel {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+      }
+      .bag-panel {
+        position: relative;
+        width: min(100%, 340px);
+        border-radius: 8px;
+        padding: 0.65rem 0.75rem 0.85rem;
+        background: linear-gradient(
+          165deg,
+          var(--leather-light) 0%,
+          var(--leather-mid) 35%,
+          var(--leather-dark) 100%
+        );
+        border: 2px solid var(--gold);
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5),
+          0 12px 40px rgba(0, 0, 0, 0.55),
+          inset 0 1px 0 rgba(232, 212, 139, 0.15);
+        transform: scale(0.94) translateY(8px);
+        opacity: 0;
+        transition: transform 0.22s cubic-bezier(0.34, 1.2, 0.64, 1),
+          opacity 0.2s ease;
+      }
+      .bag-panel::before {
+        content: "";
+        position: absolute;
+        inset: 3px;
+        border-radius: 5px;
+        border: 1px solid rgba(201, 162, 39, 0.25);
+        pointer-events: none;
+      }
+      .bag-header {
+        display: flex;
+        align-items: center;
+        gap: 0.65rem;
+        margin-bottom: 0.55rem;
+        padding-bottom: 0.45rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.35);
+      }
+      .bag-icon-wrap {
+        flex-shrink: 0;
+        width: 40px;
+        height: 40px;
+        display: grid;
+        place-items: center;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.45));
+      }
+      .bag-icon-wrap svg {
+        width: 38px;
+        height: 38px;
+      }
+      .bag-title {
+        margin: 0;
+        font-size: 0.95rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        color: var(--gold-bright);
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+      }
+      .bag-sub {
+        margin: 0.15rem 0 0;
+        font-size: 0.72rem;
+        color: rgba(232, 212, 139, 0.75);
+        font-weight: 500;
+      }
+      .bag-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 5px;
+      }
+      .bag-slot {
+        aspect-ratio: 1;
+        border-radius: 4px;
+        background: var(--slot-bg);
+        border: 1px solid var(--slot-edge);
+        box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.45);
+      }
+      .bag-hint {
+        margin-top: 0.6rem;
+        font-size: 0.68rem;
+        color: rgba(232, 212, 139, 0.55);
+        text-align: center;
+        letter-spacing: 0.02em;
+      }
+      .fallback-dot {
+        display: inline-block;
+        font-family: ui-monospace, monospace;
+        font-weight: 700;
+        color: var(--gold-bright);
+      }
     </style>
   </head>
   <body>
+    <div
+      class="bag-backdrop"
+      id="bag-backdrop"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="bag-title"
+      aria-hidden="true"
+    >
+      <div class="bag-panel" id="bag-panel">
+        <div class="bag-header">
+          <div class="bag-icon-wrap" aria-hidden="true">
+            <!-- WoW-like satchel (original vector, not extracted art) -->
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M10 18c0-4.5 3.5-8 8-8h12c4.5 0 8 3.5 8 8v3c3 0 5 2.2 5 5v14c0 2.8-2.2 5-5 5H10c-2.8 0-5-2.2-5-5V26c0-2.8 2.2-5 5-5v-3z"
+                fill="url(#l1)"
+              />
+              <path
+                d="M18 10c0-2.2 1.8-4 4-4h4c2.2 0 4 1.8 4 4v4h-12v-4z"
+                fill="url(#l2)"
+              />
+              <rect x="20" y="22" width="8" height="10" rx="1" fill="url(#b1)" />
+              <rect x="21.5" y="24" width="5" height="2" rx="0.5" fill="#3d2e22" />
+              <defs>
+                <linearGradient id="l1" x1="10" y1="10" x2="38" y2="42" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#7a5c45" />
+                  <stop offset="1" stop-color="#3d2a1f" />
+                </linearGradient>
+                <linearGradient id="l2" x1="18" y1="6" x2="30" y2="14" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#8b6f52" />
+                  <stop offset="1" stop-color="#5c4333" />
+                </linearGradient>
+                <linearGradient id="b1" x1="20" y1="22" x2="28" y2="32" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#d4af37" />
+                  <stop offset="1" stop-color="#8a7020" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div>
+            <h2 class="bag-title" id="bag-title">Bag</h2>
+            <p class="bag-sub">Leader overlay preview</p>
+          </div>
+        </div>
+        <div class="bag-grid" aria-label="Empty slots">
+          <div class="bag-slot"></div>
+          <div class="bag-slot"></div>
+          <div class="bag-slot"></div>
+          <div class="bag-slot"></div>
+          <div class="bag-slot"></div>
+          <div class="bag-slot"></div>
+          <div class="bag-slot"></div>
+          <div class="bag-slot"></div>
+          <div class="bag-slot"></div>
+          <div class="bag-slot"></div>
+          <div class="bag-slot"></div>
+          <div class="bag-slot"></div>
+          <div class="bag-slot"></div>
+          <div class="bag-slot"></div>
+          <div class="bag-slot"></div>
+          <div class="bag-slot"></div>
+        </div>
+        <p class="bag-hint">
+          Press <span class="fallback-dot">.</span> to toggle · Esc to close
+        </p>
+      </div>
+    </div>
+
     <div class="wrap">
       <p class="hero">Where powerful feels simple.</p>
       <p class="sub">
@@ -117,6 +305,10 @@
           <li>
             Cursor <strong>Glass</strong>-style docs: short, scannable pages.
           </li>
+          <li>
+            <strong>WoW-style bag demo</strong> — press <span class="fallback-dot">.</span> on this page
+            for a leader-style overlay (browser cannot read your macOS leader key).
+          </li>
         </ul>
         <div class="links">
           <a
@@ -135,5 +327,54 @@
         <a href="https://github.com/shahzebqazi/ai-agent-leaderkey">shahzebqazi/ai-agent-leaderkey</a>
       </footer>
     </div>
+    <script>
+      (function () {
+        var backdrop = document.getElementById("bag-backdrop");
+        var panel = document.getElementById("bag-panel");
+        if (!backdrop || !panel) return;
+
+        function isTypingTarget(el) {
+          if (!el) return false;
+          var tag = el.tagName;
+          if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT") return true;
+          return el.isContentEditable === true;
+        }
+
+        function openBag() {
+          backdrop.classList.add("is-open");
+          backdrop.setAttribute("aria-hidden", "false");
+        }
+
+        function closeBag() {
+          backdrop.classList.remove("is-open");
+          backdrop.setAttribute("aria-hidden", "true");
+        }
+
+        function toggleBag() {
+          if (backdrop.classList.contains("is-open")) closeBag();
+          else openBag();
+        }
+
+        document.addEventListener("keydown", function (e) {
+          if (isTypingTarget(document.activeElement)) return;
+          if (e.key === ".") {
+            e.preventDefault();
+            toggleBag();
+          }
+          if (e.key === "Escape" && backdrop.classList.contains("is-open")) {
+            e.preventDefault();
+            closeBag();
+          }
+        });
+
+        backdrop.addEventListener("click", function (e) {
+          if (e.target === backdrop) closeBag();
+        });
+
+        panel.addEventListener("click", function (e) {
+          e.stopPropagation();
+        });
+      })();
+    </script>
   </body>
 </html>
